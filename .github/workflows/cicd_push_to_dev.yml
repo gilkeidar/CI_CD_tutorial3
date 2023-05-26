@@ -64,10 +64,17 @@ jobs:
           fetch-depth: 0
         
         # Add Test Suite integration with Jest / Puppeteer HERE!
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
       - name: Run Test Suite
         run: |
+          echo "Making sure Jest is installed..."
+          npm install --save-dev jest
           echo "Running sanity tests..."
           echo "Running exhaustive tests..."
+          npm test
   create-dev-documentation:
     name: Create Dev JSDocs
     needs: run-test-suite
