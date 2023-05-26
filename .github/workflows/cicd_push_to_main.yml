@@ -109,7 +109,7 @@ jobs:
           git pull
           git rm -r --ignore-unmatch dev-docs
           git add docs
-          git commit -a -m "Updated Documentation"
+          git commit -a -m "Updated Documentation" --allow-empty
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
