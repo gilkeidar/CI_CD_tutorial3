@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
       - name: Install Semi-Standard Style
-        run: npm install semistandard
+        run: npm install semistandard --global
       - name: Run Semi-Standard Styler linter
         run: |
           pwd
