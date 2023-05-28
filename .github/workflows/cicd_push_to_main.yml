@@ -77,7 +77,8 @@ jobs:
           npm test
   create-documentation:
     name: Create JSDocs
-    needs: run-test-suite
+    #needs: run-test-suite
+    needs: [run-test-suite, lint-javascript, lint-html-css]
     runs-on: ubuntu-latest
 
     permissions:
@@ -118,7 +119,8 @@ jobs:
   run-minimizer:
     name: Run Minimizer
     #needs: [run-test-suite, create-documentation]
-    needs: run-test-suite
+    #needs: run-test-suite
+    needs: [run-test-suite, lint-javascript, lint-html-css]
     runs-on: ubuntu-latest
 
     permissions:
