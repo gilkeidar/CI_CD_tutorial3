@@ -120,7 +120,7 @@ jobs:
     name: Run Minimizer
     #needs: [run-test-suite, create-documentation]
     #needs: run-test-suite
-    needs: [run-test-suite, lint-javascript, lint-html-css]
+    needs: [create-documentation, lint-html-css]
     runs-on: ubuntu-latest
 
     permissions:
