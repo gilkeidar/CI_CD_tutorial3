@@ -78,7 +78,7 @@ jobs:
   create-documentation:
     name: Create JSDocs
     #needs: run-test-suite
-    needs: [run-test-suite, lint-javascript, lint-html-css]
+    needs: [run-test-suite, lint-javascript]
     runs-on: ubuntu-latest
 
     permissions:
