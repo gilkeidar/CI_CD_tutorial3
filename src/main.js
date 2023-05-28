@@ -22,3 +22,5 @@ function fooNewFeature () {
 fooMain();
 fooDev();
 fooNewFeature();
+
+const breakLinter = '';
