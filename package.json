@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest"
   },
-  "standard": {
+  "semistandard": {
     "env": {
         "browser": "true",
         "jest": "true"
