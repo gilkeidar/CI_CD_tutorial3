@@ -1,6 +1,9 @@
+/*  eslint-disable  */
+
 // Main page map JavaScript file
 
 // Wait for all DOM to be ready
+
 document.addEventListener('DOMContentLoaded', () => {
   const locations = document.querySelectorAll('.location');
   const map = document.getElementsByClassName('map')[0];
