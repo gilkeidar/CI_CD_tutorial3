@@ -1,4 +1,6 @@
 # CI_CD_tutorial3
+/github/actions/workflow/status/:user/:repo/:workflow+?branch=main
+
 Testing CI/CD implementation (new variations)
 
 Requirements for this to work:
