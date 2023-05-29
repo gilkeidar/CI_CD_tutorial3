@@ -8,8 +8,7 @@
   "semistandard": {
     "ignore": [
         "dist/",
-        "docs/",
-        "tests/"
+        "docs/"
     ]
   }
   
