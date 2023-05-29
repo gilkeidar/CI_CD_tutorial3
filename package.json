@@ -7,7 +7,7 @@
   },
   "eslintConfig": {
     "rules": {
-        "camelcase": "off"
+        "camelcase": "warn"
     }
   },
   "semistandard": {
