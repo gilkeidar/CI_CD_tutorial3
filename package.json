@@ -6,6 +6,9 @@
     "test": "jest"
   },
   "standard": {
-    "globals": ["Audio"]
+    "env": {
+        "browser": "true",
+        "jest": "true"
+    }
   }
 }
