@@ -7,14 +7,14 @@
   },
   "semistandard": {
     "env": {
-        "browser": "true",
-        "jest": "true"
+        "browser": true,
+        "jest": true
     },
     "eslintConfig": {
         "rules": {
             "camelcase": "warn"
         }
-      }
+    }
   }
   
 }
