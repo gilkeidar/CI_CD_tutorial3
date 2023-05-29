@@ -19,6 +19,14 @@ function fooNewFeature () {
   console.log('fooNewFeature');
 }
 
+/**
+ * Added in dev 5/28/2023
+ */
+function fooNewDev () {
+  console.log('test');
+}
+
 fooMain();
 fooDev();
 fooNewFeature();
+fooNewDev();
