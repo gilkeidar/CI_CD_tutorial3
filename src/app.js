@@ -1,4 +1,4 @@
-t;// Main page map JavaScript file
+// Main page map JavaScript file
 
 // Wait for all DOM to be ready
 
