@@ -4,5 +4,11 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "standard": {
+    "env": {
+        "browser": "true",
+        "jest": "true"
+    }
   }
 }

@@ -1,5 +1,3 @@
-/*  eslint-disable  */
-
 // Main page map JavaScript file
 
 // Wait for all DOM to be ready
