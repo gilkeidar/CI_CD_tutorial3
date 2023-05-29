@@ -10,5 +10,10 @@
         "browser": "true",
         "jest": "true"
     }
+  },
+  "eslintConfig": {
+    "rules": {
+        "camelcase": "off"
+    }
   }
 }
