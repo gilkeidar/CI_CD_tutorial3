@@ -10,12 +10,7 @@
         "dist/",
         "docs/",
         "tests/"
-    ],
-    "eslintConfig": {
-        "env": {
-            "browser": true
-        }
-    }
+    ]
   }
   
 }
