@@ -23,7 +23,7 @@ jobs:
           pwd
           cd src
           ls
-          semistandard
+          semistandard --env browser
   lint-html-css:
     name: Lint HTML & CSS
     runs-on: ubuntu-latest
