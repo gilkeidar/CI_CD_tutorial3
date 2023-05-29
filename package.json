@@ -5,16 +5,16 @@
   "scripts": {
     "test": "jest"
   },
-  "eslintConfig": {
-    "rules": {
-        "camelcase": "warn"
-    }
-  },
   "semistandard": {
     "env": {
         "browser": "true",
         "jest": "true"
-    }
+    },
+    "eslintConfig": {
+        "rules": {
+            "camelcase": "warn"
+        }
+      }
   }
   
 }
