@@ -26,7 +26,15 @@ function fooNewDev () {
   console.log('test');
 }
 
+/**
+ * Added in new-feature 5/28/2023
+ */
+function fooNewNewFeature () {
+  console.log('test');
+}
+
 fooMain();
 fooDev();
 fooNewFeature();
 fooNewDev();
+fooNewNewFeature();
