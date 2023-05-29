@@ -1,5 +1,5 @@
 # CI_CD_tutorial3
-/github/actions/workflow/status/:user/:repo/:workflow+?branch=main
+https://github.com/gilkeidar/CI_CD_tutorial3/blob/main/.github/workflows/cicd_push_to_main.yml/badge.svg
 
 Testing CI/CD implementation (new variations)
 
