@@ -153,9 +153,14 @@ jobs:
     name: Deploy
     needs: run-minimizer
     runs-on: ubuntu-latest
-
     steps:
         # Add Deploy code here
       - name: Deploy
         run: echo "Deploying..." 
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Publish dist directory to GitHub Pages
+        uses: rayluo/github-pages-overwriter@v1.3
+        with:
+          source-directory: dist
       
