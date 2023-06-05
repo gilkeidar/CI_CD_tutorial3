@@ -166,7 +166,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-            persist-credentials: false
             fetch-depth: 0
       - name: Publish dist directory to GitHub Pages
         uses: rayluo/github-pages-overwriter@v1.3
