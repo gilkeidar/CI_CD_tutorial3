@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Background music
-    const bgm = new Audio('../assets/map-my-future-bgm.ogg'); //  eslint-disable-line
+    const bgm = new Audio('./assets/map-my-future-bgm.ogg'); //  eslint-disable-line
   bgm.play();
   bgm.loop = true;
 
@@ -94,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
   musicButton.addEventListener('click', (e) => {
     const musicImg = document.querySelectorAll('img')[0];
     if (musicEnabled) {
-      musicImg.src = '../assets/audio_off.png';
+      musicImg.src = './assets/audio_off.png';
       bgm.pause();
     } else {
-      musicImg.src = '../assets/audio_on.png';
+      musicImg.src = './assets/audio_on.png';
       bgm.play();
     }
     musicEnabled = !musicEnabled;
