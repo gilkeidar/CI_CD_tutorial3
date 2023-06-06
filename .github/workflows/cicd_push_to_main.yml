@@ -171,24 +171,39 @@ jobs:
 #       with:
 #         commit_message: "Github Action: Auto Minified JS and CSS files"
 #         branch: ${{ github.ref }}
+# run-minimizer:
+#   name: Run Minimizer v3
+#   needs: create-documentation
+#   runs-on: ubuntu-latest
+
+#   steps: 
+#     - name: Checkout Code
+#       uses: actions/checkout@v3
+#       with:
+#         persist-credentials: false
+#         fetch-depth: 0
+#     - name: Minify with Minisauras
+#       uses: TeamTigers/minisauras@v2.0.0
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+#       id: dir
+#       with:
+#         directory: 'src/' ## minify all files from src directory
   run-minimizer:
-    name: Run Minimizer v3
+    name: Run Minimizer v4
     needs: create-documentation
     runs-on: ubuntu-latest
 
-    steps: 
+    steps:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          persist-credentials: false
           fetch-depth: 0
-      - name: Minify with Minisauras
-        uses: TeamTigers/minisauras@v2.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        id: dir
-        with:
-          directory: 'src/' ## minify all files from src directory
+      - name: Minify code in src/ directory
+        run: |
+          pwd
+          ./minimize.sh
+
   deploy:
     name: Deploy
     needs: run-minimizer
