@@ -34,4 +34,4 @@ Need the following directory structure
     ```
     in the `package.json` file for `npm test` to run correctly in the CI/CD script
 
-    test change 2
+    test change 3
