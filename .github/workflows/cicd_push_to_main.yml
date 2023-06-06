@@ -112,43 +112,64 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+#   run-minimizer:
+#     name: Run Minimizer
+#     #needs: [run-test-suite, create-documentation]
+#     #needs: run-test-suite
+#     #needs: [create-documentation, lint-html-css]
+#     needs: create-documentation
+#     runs-on: ubuntu-latest
+
+#     permissions:
+#       # Lets this job push the docs to the repository
+#       contents: write
+
+#     steps:
+#       - name: Checkout Code
+#         uses: actions/checkout@v3
+#         with:
+#             persist-credentials: false
+#             fetch-depth: 0
+#         # Add Minimizer Code here
+#       - name: Minimize Code
+#         uses: docker://devatherock/minify-js:1.0.3
+#         with:
+#           directory: 'src'      # Optional
+#           output: 'dist'  # Optional
+#           add_suffix: false     # Optional
+#       - name: Commit files to dist directory
+#         run: |
+#           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+#           git config --local user.name "github-actions[bot]"
+#           git pull
+#           cp -r src/assets dist
+#           git add dist
+#           git commit -a -m "Minimized files" --allow-empty
+#       - name: Push changes
+#         uses: ad-m/github-push-action@master
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           branch: ${{ github.ref }}
   run-minimizer:
-    name: Run Minimizer
-    #needs: [run-test-suite, create-documentation]
-    #needs: run-test-suite
-    #needs: [create-documentation, lint-html-css]
+    name: Run Minimizer v2
     needs: create-documentation
     runs-on: ubuntu-latest
-
-    permissions:
-      # Lets this job push the docs to the repository
-      contents: write
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-            persist-credentials: false
-            fetch-depth: 0
-        # Add Minimizer Code here
-      - name: Minimize Code
-        uses: docker://devatherock/minify-js:1.0.3
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Auto Minify
+        uses: nizarmah/auto-minify@v2.1
         with:
-          directory: 'src'      # Optional
-          output: 'dist'  # Optional
-          add_suffix: false     # Optional
-      - name: Commit files to dist directory
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git pull
-          cp -r src/assets dist
-          git add dist
-          git commit -a -m "Minimized files" --allow-empty
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+          directory: 'src'
+          output: 'dist'
+      - name: Auto committing minified files
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "Github Action: Auto Minified JS and CSS files"
           branch: ${{ github.ref }}
   deploy:
     name: Deploy
