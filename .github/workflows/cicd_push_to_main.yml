@@ -174,7 +174,7 @@ jobs:
   run-minimizer:
     name: Run Minimizer v3
     needs: create-documentation
-    runs-on: ubuntu-18.04
+    runs-on: ubuntus-latest
 
     steps: 
       - name: Checkout Code
