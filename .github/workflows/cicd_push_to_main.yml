@@ -150,27 +150,45 @@ jobs:
 #         with:
 #           github_token: ${{ secrets.GITHUB_TOKEN }}
 #           branch: ${{ github.ref }}
-  run-minimizer:
-    name: Run Minimizer v2
-    needs: create-documentation
-    runs-on: ubuntu-latest
+# run-minimizer:
+#   name: Run Minimizer v2
+#   needs: create-documentation
+#   runs-on: ubuntu-latest
 
-    steps:
+#   steps:
+#     - name: Checkout Code
+#       uses: actions/checkout@v3
+#       with:
+#         persist-credentials: false
+#         fetch-depth: 0
+#     - name: Auto Minify
+#       uses: nizarmah/auto-minify@v2.1
+#       with:
+#         directory: 'src'
+#         output: 'dist'
+#     - name: Auto committing minified files
+#       uses: stefanzweifel/git-auto-commit-action@v4
+#       with:
+#         commit_message: "Github Action: Auto Minified JS and CSS files"
+#         branch: ${{ github.ref }}
+  run-minimizer:
+    name: Run Minimizer v3
+    needs: create-documentation
+    runs-on: ubuntu-18.04
+
+    steps: 
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
-      - name: Auto Minify
-        uses: nizarmah/auto-minify@v2.1
+      - name: Minify with Minisauras
+        uses: TeamTigers/minisauras@v2.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        id: dir
         with:
-          directory: 'src'
-          output: 'dist'
-      - name: Auto committing minified files
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Github Action: Auto Minified JS and CSS files"
-          branch: ${{ github.ref }}
+          directory: 'src/' ## minify all files from src directory
   deploy:
     name: Deploy
     needs: run-minimizer
