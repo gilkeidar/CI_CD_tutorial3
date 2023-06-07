@@ -202,7 +202,7 @@ jobs:
       - name: Minify code in src/ directory
         run: |
           pwd
-          ./minimize.sh
+          ./.github/minimize.sh
 
   deploy:
     name: Deploy
