@@ -201,7 +201,6 @@ jobs:
           fetch-depth: 0
       - name: Minify code in src/ directory
         run: |
-          pwd
           ./.github/minimize.sh
 
   deploy:

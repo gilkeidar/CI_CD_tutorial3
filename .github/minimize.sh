@@ -1,3 +1,11 @@
+#   Minifier Script
+#   IMPORTANT - this script needs permission to run! Run the command
+#   $ git update-index --chmod=+x ./.github/minimize.sh
+#   from the top directory, and push the change in a commit.
+#   This must be done for any bash script that is created or renamed
+#   on a Windows machine in order to run it in a GitHub Action.
+#   Source: https://aileenrae.co.uk/blog/github-actions-shell-script-permission-denied-error/
+
 npm install uglify-js -g
 npm install html-minifier-terser -g
 FILES="src/"
