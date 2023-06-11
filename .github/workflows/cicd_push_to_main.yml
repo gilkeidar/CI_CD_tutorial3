@@ -194,6 +194,10 @@ jobs:
     needs: create-documentation
     runs-on: ubuntu-latest
 
+    permissions:
+      # Lets this job push the docs to the repository
+      contents: write
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
